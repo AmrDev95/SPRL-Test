@@ -1,0 +1,145 @@
+@use '@angular/material' as mat;
+@include mat.core();
+@import 'node_modules/@angular/material/theming';
+@import 'colors';
+
+$light-foreground: (
+        // base: #000000,
+        divider: #b1b5c3a3, /* slate.200 */
+        dividers: #b1b5c3a3, /* slate.200 */
+        disabled: #94A3B8, /* slate.400 */
+        disabled-button: #94A3B8, /* slate.400 */
+        // disabled-text: #94A3B8, /* slate.400 */
+        // elevation: #000000,
+        // hint-text: #94A3B8, /* slate.400 */
+        // secondary-text: #64748B, /* slate.500 */
+        // icon: #64748B, /* slate.500 */
+        // icons: #64748B, /* slate.500 */
+        // mat-icon: #64748B, /* slate.500 */
+        // text: #1E293B, /* slate.800 */
+        // slider-min: #1E293B, /* slate.800 */
+        // slider-off: #CBD5E1, /* slate.300 */
+        // slider-off-active: #94A3B8 /* slate.400 */
+);
+
+$light-background: (
+        background: $light-background,
+        // status-bar: #CBD5E1, /* slate.300 */
+        // app-bar: #FFFFFF,
+        // background: #F1F5F9, /* slate.100 */
+        // hover: rgba(148, 163, 184, 0.12), /* slate.400 + opacity */
+        card: $white,
+        // dialog: #FFFFFF,
+        disabled-button: rgba(148, 163, 184, 0.38), /* slate.400 + opacity */
+        // raised-button: #FFFFFF,
+        // focused-button: #64748B, /* slate.500 */
+        // selected-button: #E2E8F0, /* slate.200 */
+        selected-disabled-button: #E2E8F0, /* slate.200 */
+        disabled-button-toggle: #CBD5E1, /* slate.300 */
+        // unselected-chip: #E2E8F0, /* slate.200 */
+        disabled-list-option: #CBD5E1, /* slate.300 */
+        tooltip: #1E293B, /* slate.800 */
+        // paginator:#F1F5F9,
+        // mat-form-field: (
+        //   border-color:red, // Custom border color
+        //   background-color: #F0F0F0, // Custom background color
+        //   text-color: #333,
+        // )
+);
+
+$dark-foreground:(
+        // base: #FFFFFF,
+        // divider: rgba(241, 245, 249, 0.12),
+        // dividers: rgba(241, 245, 249, 0.12),
+        // disabled: #475569,
+        // disabled-button: #1E293B,
+        // disabled-text: #475569,
+        // elevation: #000000,
+        // hint-text: #64748B,
+        // secondary-text: #94A3B8,
+        // icon: #F1F5F9,
+        // icons: #F1F5F9,
+        // mat-icon: #94A3B8,
+        // text: #FFFFFF,
+        // slider-min: #FFFFFF,
+        // slider-off: #64748B,
+        // slider-off-active: #94A3B8,
+);
+
+$dark-background: (
+        // status-bar: #0F172A,
+        // app-bar: #0F172A,
+        // background: #0F172A,
+        // hover: rgba(255, 255, 255, 0.05),
+        // card: #1E293B,
+        // dialog: #1E293B,
+        // disabled-button: rgba(15, 23, 42, 0.38),
+        // raised-button: #0F172A,
+        // focused-button: #E2E8F0,
+        // selected-button: rgba(255, 255, 255, 0.05),
+        // selected-disabled-button: #1E293B,
+        // disabled-button-toggle: #0F172A,
+        // unselected-chip: #475569,
+        // disabled-list-option: #E2E8F0,
+        // tooltip: #64748B,
+        // paginator: #0F172A,
+        // mat-form-field: (
+        //   border-color:red, // Custom border color
+        //   background-color: white, // Custom background color
+        //   text-color: #333,
+        // )
+);
+
+// Define the light theme palette
+$custom-light-primary: mat-palette($custom-brand-primary);
+$custom-light-accent:  mat-palette($custom-brand-accent);
+$custom-danger:  mat-palette($custom-brand-danger);
+
+$light-theme: (
+  primary:$custom-light-primary,
+  accent:$custom-light-accent,
+  warn:$custom-danger,
+  background:$light-background,
+  foreground:$light-foreground
+);
+
+$dark-theme: (
+  primary:$custom-light-primary,
+  accent:$custom-light-accent,
+  warn:$custom-danger,
+  background:$dark-background,
+  foreground:$dark-foreground,
+);
+
+
+$custom-typography: mat.define-typography-config(
+  $font-family: 'publicSans',
+  $headline-1: mat.define-typography-level(1.875rem, 2.25rem, 800, 'publicSans'),
+  $headline-2: mat.define-typography-level(1.25rem, 1.75rem, 700, 'publicSans'),
+  $headline-3: mat.define-typography-level(1.125rem, 1.75rem, 600, 'publicSans'),
+  $headline-4: mat.define-typography-level(0.875rem, 1.25rem, 600, 'publicSans'),
+  $headline-5: mat.define-typography-level(0.875rem, 1.5rem, 400, 'publicSans'),
+  $headline-6: mat.define-typography-level(0.875rem, 1.5rem, 400, 'publicSans'),
+  $subtitle-1: mat.define-typography-level(1rem, 1.75rem, 400, 'publicSans'),
+  $subtitle-2: mat.define-typography-level(0.875rem, 1.25rem, 600, 'publicSans'),
+  $body-1: mat.define-typography-level(0.875rem, 1.5rem, 400, 'publicSans'),
+  $body-2: mat.define-typography-level(0.875rem, 1.5rem, 400, 'publicSans'),
+  $caption: mat.define-typography-level(0.75rem, 1rem, 400, 'publicSans'),
+  $button: mat.define-typography-level(0.875rem, 0.875rem, 500, 'publicSans'),
+  $overline: mat.define-typography-level(0.75rem, 2rem, 500, 'publicSans')
+);
+
+//define typography fonts
+@include mat.all-component-themes((
+    typography: $custom-typography
+));
+
+// Include the default theme styles.
+@include angular-material-theme($light-theme);
+// @include mat.form-field-theme($dark-theme);
+// @include mat.input-theme($dark-theme);
+
+//dark theme palette
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+}

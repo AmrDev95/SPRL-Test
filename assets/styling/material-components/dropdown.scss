@@ -1,0 +1,45 @@
+@import "../../theming/colors";
+
+.mat-mdc-option.mat-mdc-option-active.mdc-list-item,
+.mdc-list-item--selected,
+.mat-mdc-option:hover:not(.mdc-list-item--disabled) {
+  background-color: $menu-selected !important;
+}
+
+.cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel {
+  padding: 6px !important;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.mat-mdc-option.mdc-list-item {
+  border-radius: 7px;
+  margin-bottom: 3px;
+  align-items: center;
+  padding: 6px;
+  height: 35px !important;
+  min-height: 35px !important;
+}
+
+.mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after {
+  width: 11px !important;
+  height: 5px !important;
+}
+
+.mat-pseudo-checkbox-full.mat-pseudo-checkbox-checked::after {
+  width: 7px !important;
+  height: 3px !important;
+}
+
+.mat-pseudo-checkbox {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.mat-mdc-option .mat-icon,
+.mat-mdc-option .mat-pseudo-checkbox-full {
+  margin-right: 10px !important;
+}
+
+.mat-mdc-select-arrow svg {
+  left: 100% !important;
+}

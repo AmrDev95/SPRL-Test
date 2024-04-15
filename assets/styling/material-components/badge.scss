@@ -1,0 +1,48 @@
+// custom colors badge
+.mat-badge.badge-success {
+  .mat-badge-content {
+    background-color: map-get($custom-brand-success, 500) !important;
+  }
+}
+
+.mat-badge.badge-warning {
+  .mat-badge-content {
+    background-color: map-get($custom-brand-warning, 500) !important;
+    color: $black !important;
+  }
+}
+
+// badge animations
+
+.mat-badge.pulse {
+  .mat-badge-content {
+    -webkit-animation: scale-up-center 0.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+      infinite alternate-reverse both;
+    animation: scale-up-center 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite
+      alternate-reverse both;
+  }
+}
+
+// animation keyframes
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
